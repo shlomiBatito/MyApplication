@@ -32,4 +32,16 @@ public class AcadameyConst {
         contentValues.put(AcadameyConst.RideConst.EMAIL, ride.getEmail());
         return contentValues;
          }
+    public static Ride ContentValuesToStudent(ContentValues contentValues) {
+        Ride ride = new Ride();
+        ride.setTypeOfRide(contentValues.geta(RideConst.TYPEOFRIDE));
+        ride.setStartLocation(contentValues.getAsString(RideConst.STARTLOCATION));
+        ride.setEndLocation(contentValues.getAsString(RideConst.ENDLOCATION));
+        ride.setStartTime(contentValues.getAsLong(RideConst.STARTTIME));
+        ride.setEndTime(contentValues.getAsTime(RideConst.ENDTIME));
+        ride.setName(contentValues.getAsString(RideConst.NAME);
+        ride.setCelNumber(contentValues.getAsInteger(RideConst.CELNUMBER));
+        ride.setEmail(contentValues.getAsString(RideConst.EMAIL));
+        return ride;
+    }
 }

@@ -1,9 +1,12 @@
 package il.co.bat.shlomi.javaproject.model.entities;
 
+import android.content.ContentValues;
 import android.location.Location;
 
 import java.sql.Time;
 import java.util.Timer;
+
+import il.co.bat.shlomi.javaproject.model.backend.AcadameyConst;
 
 public class Ride {
 
@@ -24,6 +27,10 @@ public class Ride {
         this.name = name;
         this.celNumber = celNumber;
         this.email = email;
+    }
+
+    public Ride() {
+
     }
 
     public Location getStartLocation() {
@@ -94,6 +101,28 @@ public class Ride {
         this.email = email;
     }
 
+    public Ride ContentValuesToStudent(ContentValues contentValues) {
+        Ride ride = new Ride();
+        ride.setTypeOfRide(contentValues.get("typeOfRide"));
+        ride.setStartLocation(contentValues.getAsString("startLocation"));
+        ride.setEndLocation(contentValues.getAsString("endLocation"));
+        ride.setStartTime(contentValues.getAsLong("startTime"));
+        ride.setEndTime(contentValues.getAsTime("endTime"));
+        ride.setName(contentValues.getAsString("name"));
+        ride.setCelNumber(contentValues.getAsInteger("celnumber"));
+        ride.setEmail(contentValues.getAsString("email"));
+        return ride;
+    }
 
-
-}
+    public  ContentValues CourseToContentValues(Ride ride) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("typeOfRide", ride.getTypeOfRide());
+            contentValues.put("startLocation", ride.getStartLocation());
+            contentValues.put("endLocation", ride.getEndLocation());
+            contentValues.put("startTime", ride.getStartTime());
+            contentValues.put("endTime", ride.getEndTime());
+            contentValues.put("name", ride.getName());
+            contentValues.put("celnumber", ride.getCelNumber());
+            contentValues.put("email", ride.getEmail());
+            return contentValues;
+        }

@@ -102,7 +102,7 @@ public class Ride {
     }
 
     public Ride ContentValuesToStudent(ContentValues contentValues) {
-        Ride ride = new Ride();
+        Ride ride  = new Ride();
         ride.setTypeOfRide(contentValues.get("typeOfRide"));
         ride.setStartLocation(contentValues.getAsString("startLocation"));
         ride.setEndLocation(contentValues.getAsString("endLocation"));

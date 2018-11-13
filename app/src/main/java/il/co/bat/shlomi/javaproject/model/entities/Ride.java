@@ -9,7 +9,6 @@ import java.util.Timer;
 import il.co.bat.shlomi.javaproject.model.backend.AcadameyConst;
 
 public class Ride {
-
     TypeOfRide typeOfRide;
     Location startLocation;
     Location endLocation;

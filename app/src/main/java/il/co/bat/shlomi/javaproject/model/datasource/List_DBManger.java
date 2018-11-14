@@ -31,7 +31,7 @@ public class List_DBManger implements DB_manager {
     }*/
 
     @Override
-    public int addStudent(ContentValues ride) {
+    public int addRide(ContentValues ride) {
         return 0;
     }
 

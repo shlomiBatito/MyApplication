@@ -4,9 +4,6 @@ import android.content.ContentValues;
 import android.location.Location;
 
 import java.sql.Time;
-import java.util.Timer;
-
-import il.co.bat.shlomi.javaproject.model.backend.AcadameyConst;
 
 public class Ride {
     TypeOfRide typeOfRide;
@@ -63,7 +60,7 @@ public class Ride {
         return startTime;
     }
 
-    public void setStartTime(Time startTime) {
+    public void setStartTime(Long startTime) {
         this.startTime = startTime;
     }
 
